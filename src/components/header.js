@@ -4,7 +4,7 @@ class Header extends Component {
 render() {
   return(
     <>
-    <h3>Sample header text</h3>
+    <h1 id='header'>🔥CatTinder</h1>
     </>
   )
   }

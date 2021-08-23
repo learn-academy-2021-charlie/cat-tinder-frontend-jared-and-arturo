@@ -4,7 +4,7 @@ class Footer extends Component {
 render() {
   return (
     <>
-    <h3>Footer sample text</h3>
+    <h3 id="footer">This App was created by Arturo and Jared</h3>
     </>
 )}
 }
