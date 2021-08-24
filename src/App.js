@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import Header from './components/header';
-import Footer from './components/footer';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import CatEdit from './pages/CatEdit';
 import CatIndex from './pages/CatIndex';
 import CatNew from './pages/CatNew';
@@ -13,7 +13,7 @@ import React, {Component} from 'react'
 
 import {
   BrowserRouter as Router,
-   Route, 
+   Route,
    Switch
   } from 'react-router-dom'
   import cats from './mockCats.js'
@@ -31,7 +31,7 @@ render() {
   return (
     <Router>
       <Header />
-    
+
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path= "/catindex" component = {CatIndex} />
@@ -40,10 +40,10 @@ render() {
         <Route path= "/catnew" component = {CatNew}/>
         <Route component= {NotFound}/>
       </Switch>
-     
+
       <Footer />
     </Router>
-    
+
   );
 }
 }
