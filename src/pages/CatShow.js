@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { Card, CardTitle, Col, CardText } from 'reactstrap';
+
 
 class CatShow extends Component {
   render() {
     return (
       <>
-        <h3>I am the show cat page</h3>
       </>
     )
   }

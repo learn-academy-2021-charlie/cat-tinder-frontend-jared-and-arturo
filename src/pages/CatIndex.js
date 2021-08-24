@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import { Card, CardTitle, Col } from 'reactstrap';
 
 class CatIndex extends Component {
   render() {
     return (
       <>
-        <h3>I am the index page</h3>
+        <h2>Meet the Cats!</h2>
+
+
       </>
     )
   }
