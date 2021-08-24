@@ -9,6 +9,6 @@ describe('When routed to not found page', () => {
   const fourOhFour = shallow(<NotFound />)
   it('contains 404.jpg image', () => {
     let img = fourOhFour.find('img')
-    expect(img.props().src).toContain('404.jpg')
+    expect(img.props().src).toEqual('404.jpg')
   })
 })
