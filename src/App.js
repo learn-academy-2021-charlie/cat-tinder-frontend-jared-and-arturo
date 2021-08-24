@@ -34,8 +34,15 @@ render() {
 
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path= "/catindex" component = {CatIndex} />
-        <Route path= "/catshow"  component = {CatShow}/>
+        <Route path="/catindex" render={ (props) => <CatIndex cats={ this.state.cats } /> } />
+
+        <Route path="/catshow/:id" render={ (props) => {
+  let id = props.match.params.id
+  let cat = this.state.cats.find(cat => cat.id === +id)
+  return <CatShow cat={ cat } />
+}} />
+
+
         <Route path= "/catedit" component = {CatEdit} />
         <Route path= "/catnew" component = {CatNew}/>
         <Route component= {NotFound}/>

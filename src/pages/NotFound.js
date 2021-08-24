@@ -5,8 +5,7 @@ class NotFound extends Component {
   render() {
     return (
       <div id='404img'>
-      <img src={NotFoundImg} alt= "404 message" width="1500px" height="1200px"
-/>
+      <img src={NotFoundImg} alt= "404 message" width="1500px" height="1200px"/>
       </ div>
     )
   }
