@@ -16,6 +16,7 @@ class CatNew extends Component {
   }
 
   handleChange = (e) => {
+    console.log(e.target.name)
     let {form } = this.state
     form[e.target.name] = e.target.value
     this.setState({ form: form })
