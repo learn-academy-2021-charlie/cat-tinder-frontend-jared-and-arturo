@@ -7,7 +7,7 @@ import CatNew from './pages/CatNew';
 import CatShow from './pages/CatShow';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
-import React, {Component} from 'react'
+import React, {Component} from 'react';
 
 
 import {
@@ -15,16 +15,19 @@ import {
    Route,
    Switch
   } from 'react-router-dom'
-  import cats from './mockCats.js'
+import cats from './mockCats.js'
 
 class App extends Component {
   constructor(props){
     super(props)
     this.state = {
         cats: cats
-      }
     }
+  }
 
+  createNewCat = (newCat) => {
+    console.log(newCat)
+  }
 
 render() {
   return (
@@ -42,13 +45,16 @@ render() {
         }} />
 
         <Route path= "/catedit" component = {CatEdit} />
-        <Route path= "/catnew" component = {CatNew}/>
+        <Route
+          path= "/catnew"
+          render = {
+            (props) => <CatNew createNewCat={ this.createNewCat}/>
+            }
+        />
         <Route component= {NotFound}/>
       </Switch>
-
       <Footer />
     </Router>
-
   );
 }
 }
