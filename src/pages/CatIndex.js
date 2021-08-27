@@ -9,7 +9,7 @@ class CatIndex extends Component {
       <>
         <h2>Meet the Cats!</h2>
         <br />
-        <Col sm="6">
+          <Col sm="6">
           {this.props.cats && this.props.cats.map(cat => {
             return (
             <Card body key={ cat.id }>
@@ -22,7 +22,6 @@ class CatIndex extends Component {
             )
           })}
         </Col>
-
       </>
     )
   }

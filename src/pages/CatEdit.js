@@ -7,23 +7,22 @@ class CatEdit extends Component {
     super(props)
     this.state = {
       form:{
-        name: `${this.props.cat.name}`,
-        age: `${this.props.cat.age}`,
-        enjoys: `${this.props.cat.enjoys}`
+        name: this.props.cat ? this.props.cat.name : '',
+        age: this.props.cat ? this.props.cat.age: '',
+        enjoys: this.props.cat ? this.props.cat.enjoys: ''
       },
       submitted: false
     }
   }
 
   handleChange = (e) => {
-    console.log(e.target.name)
     let { form } = this.state
     form[e.target.name] = e.target.value
     this.setState({ form: form })
   }
 
   handleSubmit = () => {
-    this.props.updateCat(this.state.form)
+    this.props.updateCat(this.state.form, this.props.cat.id)
     this.setState({submitted:true})
   }
 

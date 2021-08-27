@@ -76,23 +76,29 @@ class App extends Component {
         return response.json()
       }
     })
-  .then(payload => {
-    this.catIndex()
-  })
-  .catch(errors => {
-    console.log("update errors:", errors)
-  })
-}
-
-
-
-  createNewCat = (newCat) => {
-    console.log(newCat)
+    .then(payload => {
+      this.catIndex()
+    })
+    .catch(errors => {
+      console.log("update errors:", errors)
+    })
   }
 
-  updateCat = (updatedCat) => {
-    console.log(updatedCat)
+  deleteCat = (id) => {
+    fetch(`http://localhost:3000/cats/${id}`, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "DELETE"
+    })
+    .then(response => {
+      return response.json()
+    })
+    .catch(errors => {
+      console.log("delete errors:", errors)
+    })
   }
+
 
 render() {
   return (
@@ -106,14 +112,15 @@ render() {
         <Route path="/catshow/:id" render={ (props) => {
           let id = props.match.params.id
           let cat = this.state.cats.find(cat => cat.id === +id)
-          return <CatShow cat={ cat } />
+          return <CatShow cat={ cat } deleteCat={this.deleteCat}/>
         }} />
 
         <Route path= "/catedit/:id" render= { (props) => {
           let id = props.match.params.id
           let cat = this.state.cats.find(cat => cat.id === +id)
-          return <CatEdit cat={ cat } />
+          return <CatEdit cat={ cat } updateCat={this.updateCat} />
         }} />
+        
         <Route
           path= "/catnew"
           render = {
